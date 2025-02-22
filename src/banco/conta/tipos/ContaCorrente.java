@@ -1,8 +1,9 @@
-package conta;
+package banco.conta.tipos;
 
+import banco.Conta;
 import cliente.Cliente;
 
-public class ContaCorrente  extends Conta{
+public class ContaCorrente  extends Conta {
 
     private static int sequencialContaCorrente = 1000;
 

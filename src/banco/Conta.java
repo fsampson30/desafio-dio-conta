@@ -1,7 +1,7 @@
-package conta;
+package banco;
 
 import cliente.Cliente;
-import conta.interfaces.ContaImpl;
+import banco.conta.interfaces.ContaImpl;
 import exceptions.SaldoInsuficienteException;
 import exceptions.ValorNegativoException;
 
@@ -12,12 +12,15 @@ public class Conta implements ContaImpl {
     private int numero;
     private double saldo;
     private Cliente cliente;
+    private Banco banco = new Banco();
 
     public Conta(Cliente cliente, int numero, double depositoInicial) {
         this.saldo = depositoInicial;
         this.numero = numero;
         this.cliente = cliente;
         depositar(depositoInicial);
+        banco.adicionarCliente(cliente);
+
     }
 
     @Override
@@ -29,7 +32,7 @@ public class Conta implements ContaImpl {
 
     @Override
     public void depositar(double valor) {
-        if (valor >= 0){
+        if (valor > 0){
             this.saldo += valor;
         } else throw new ValorNegativoException();
     }
