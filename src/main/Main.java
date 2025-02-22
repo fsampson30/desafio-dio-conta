@@ -27,6 +27,9 @@ public class Main {
         cc.sacar(100);
         cc.depositar(50);
 
+        cc.transferir(20, poupanca1);
+        poupanca1.imprimirExtrato();
+
         banco.listarClientesConta();
 
 
