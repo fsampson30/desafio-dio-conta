@@ -5,7 +5,7 @@ import banco.conta.interfaces.ContaImpl;
 import exceptions.SaldoInsuficienteException;
 import exceptions.ValorNegativoException;
 
-public class Conta implements ContaImpl {
+public abstract class Conta implements ContaImpl {
 
     private final int AGENCIA_PADRAO = 3010;
 
